@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
+const { ModuleFederationPlugin } = require("webpack").container;
 
 module.exports = {
   entry: "./src/index",
@@ -26,6 +27,15 @@ module.exports = {
     ],
   },
   plugins: [
+    new ModuleFederationPlugin({
+      name: "auth",
+      library: { type: "var", name: "auth" },
+      filename: "remoteEntry.js",
+      exposes: {
+        "./LoginPage": "./src/LoginPage",
+      },
+      shared: { react: { singleton: true }, "react-dom": { singleton: true } },
+    }),
     new HtmlWebpackPlugin({
       template: "./public/index.html",
     }),
