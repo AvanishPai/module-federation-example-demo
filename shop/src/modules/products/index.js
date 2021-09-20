@@ -1,4 +1,3 @@
-import { observer } from "mobx-react";
 import axios from "axios";
 import * as React from "react";
 import styled from "styled-components";
@@ -23,7 +22,7 @@ const PageTitle = styled.h2`
   padding-left: 24px;
 `;
 
-export default observer(function ProductsPage() {
+export default function ProductsPage() {
   const [products, setProducts] = React.useState([]);
 
   React.useEffect(() => {
@@ -42,4 +41,4 @@ export default observer(function ProductsPage() {
       </Products>
     </Page>
   );
-});
+}
