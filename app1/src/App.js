@@ -1,10 +1,11 @@
 import React from "react";
 import RemoteButton from 'app2/Button';
+import LocalButton from './Button'
 
 const App = () => (
   <div>
-    <h1>Basic Host-Remote</h1>
-    <h2>App 1</h2>
+    <h1>App 1</h1>
+    <LocalButton />
     <RemoteButton />
   </div>
 );

@@ -5,10 +5,10 @@ const Button = () => (
     style={{
       height: 36,
       padding: 12,
-      backgroundColor: "#106fb1",
+      backgroundColor: "yellow",
     }}
   >
-    App 2 button
+    App 1 button
   </button>
 );
 
