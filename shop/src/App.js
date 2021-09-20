@@ -1,12 +1,17 @@
 import React from "react";
-import RemoteButton from 'app2/Button';
-import LocalButton from './Button'
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+
+import ProductsPage from "./modules/products";
 
 const App = () => (
   <div>
-    <h1>App 1</h1>
-    <LocalButton />
-    <RemoteButton />
+    <BrowserRouter>
+      <Switch>
+        <Route path="/">
+          <ProductsPage />
+        </Route>
+      </Switch>
+    </BrowserRouter>
   </div>
 );
 
